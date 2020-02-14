@@ -73,6 +73,12 @@ int main() {
 	verticalWord("hi");
 	cout << "****************************************" << endl;
 
+	cout << "Problem 4" << endl;
+	convertDigit(3);
+	convertDigit(7);
+	convertDigit(0);
+	cout << "****************************************" << endl;
+
 	return (0);
 } //main
 
@@ -96,7 +102,30 @@ void verticalWord(char word[]) {
 	}
 }
 
+void convertDigit(int x){
 
+		if (x == 0){
+			cout << "zero" << endl;
+		}else if(x==1){
+			cout << "one" << endl;
+		}else if(x==2){
+			cout << "two" << endl;
+		}else if(x==3){
+			cout << "three" << endl;
+		}else if(x==4){
+			cout << "four" << endl;
+		}else if(x==5){
+			cout << "five" << endl;
+		}else if(x==6){
+			cout << "six" << endl;
+		}else if(x==7){
+			cout << "seven" << endl;
+		}else if(x==8){
+			cout << "eight" << endl;
+		}else if(x==9){
+			cout << "nine" << endl;
+		}
+}
 
 
 
