@@ -57,6 +57,7 @@ void printWord(char*);
 void sumNumber(int);
 
 bool isPalindrome(char*);
+void printString(char[], int);
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -94,6 +95,18 @@ int main() {
 	std::cout << std::boolalpha << isPalindrome("mom") << endl;
 	std::cout << std::boolalpha << isPalindrome("palindrome") << endl;
 	std::cout << std::boolalpha << isPalindrome("faoaf") << endl;
+
+	cout << "****************************************" << endl;
+
+	cout << "Problem 7" << endl;
+
+	char test1[2] = {'e', 'h'};
+	char test2[3] = {'c','a','t'};
+	char test3[4] = {'r','a','i','n'};
+
+ 	printString(test1, 2);
+ 	printString(test2, 3);
+ 	printString(test3, 4);
 
 	cout << "****************************************" << endl;
 
@@ -175,11 +188,35 @@ void sumNumber(int x) {
 bool isPalindrome(char word[]) {
 	int halfLen = strlen(word) / 2;
 	for (int i = 0; i < halfLen; i++) {
-		if (word[i] != word[strlen(word) - i -1]){
+		if (word[i] != word[strlen(word) - i - 1]) {
 			return false;
 		}
 
 	}
 	return true;
+}
+
+void printCharArr(char string[], int lenth) {
+	for (int i = 0; i < lenth; i++) {
+		cout << string[i];
+	}
+	cout << "\n";
+}
+
+char* inverseString(char string[], int lenth) {
+	char temp;
+	int halfLen = lenth / 2;
+		for (int i = 0; i < halfLen; i++) {
+			temp = string[i];
+			string[i] = string[lenth - i - 1];
+			string[lenth - i - 1] = temp;
+		}
+	return string;
+
+}
+void printString(char string[], int lenth) {
+	printCharArr(string, lenth);
+	string = inverseString(string, lenth);
+	printCharArr(string, lenth);
 }
 
