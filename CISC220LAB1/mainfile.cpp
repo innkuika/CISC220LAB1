@@ -219,18 +219,22 @@ void binaryToDemial(char* x) {
 
 void perfectNumber() {
 	int sum = 0;
-	for (int i = 2; i < 100; i++) {
+
+	for (int i = 2; i < 10000; i++) {
+		sum = 0;
 		for (int j = 1; j < i; j++) {
-			if (j % i == 0) {
-				sum += i;
-			}
-			if (sum == i) {
-				cout << "\n";
-				cout << j;
-				cout << " is a perfect number.";
+			if (i % j == 0) {
+				sum += j;
 			}
 		}
+			if (sum == i) {
+				cout << "\n";
+				cout << i;
+				cout << " is a perfect number.";
+			}
+
 	}
+	cout << "\n";
 }
 bool isPalindrome(char word[]) {
 	int halfLen = strlen(word) / 2;
