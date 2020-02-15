@@ -14,6 +14,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
+
 using namespace std;
 
 void printGreetings();
@@ -114,6 +116,9 @@ int main() {
 	sumNumber(3248);
 	sumNumber(823);
 	sumNumber(1240293);
+	cout << "****************************************" << endl;
+
+	cout << "Problem 14" << endl;
 	cout << "****************************************" << endl;
 
 	return (0);
@@ -219,4 +224,24 @@ void printString(char string[], int lenth) {
 	string = inverseString(string, lenth);
 	printCharArr(string, lenth);
 }
+
+
+void printDiagonal(char charMat[][], int matLen ){
+
+}
+void matrixDiagonal(char charArr[], int arrLen){
+	int matLen = sqrt(arrLen);
+	char charMat[matLen][matLen];
+
+	printDiagonal(charMat, matLen);
+}
+
+
+
+
+
+
+
+
+
 
