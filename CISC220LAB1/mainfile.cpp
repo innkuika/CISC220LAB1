@@ -58,7 +58,7 @@ void convertDigit(int);
 
 void printWord(char word[]);
 void sumNumber(int n);
-void binaryToDemial(char* x);
+void binaryToDemial(char *x);
 
 void printWord(char*);
 void sumNumber(int);
@@ -67,6 +67,7 @@ bool isPalindrome(char*);
 
 void printString(char[], int);
 
+void matrixDiagonal(char*, int);
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -109,13 +110,13 @@ int main() {
 
 	cout << "Problem 7" << endl;
 
-	char test1[2] = {'e', 'h'};
-	char test2[3] = {'c','a','t'};
-	char test3[4] = {'r','a','i','n'};
+	char test71[2] = { 'e', 'h' };
+	char test72[3] = { 'c', 'a', 't' };
+	char test73[4] = { 'r', 'a', 'i', 'n' };
 
- 	printString(test1, 2);
- 	printString(test2, 3);
- 	printString(test3, 4);
+	printString(test71, 2);
+	printString(test72, 3);
+	printString(test73, 4);
 
 	cout << "****************************************" << endl;
 
@@ -125,18 +126,19 @@ int main() {
 	sumNumber(1240293);
 	cout << "****************************************" << endl;
 
-
 	cout << "Problem 9" << endl;
 	binaryToDemial("10110");
 	binaryToDemial("1000011");
 	cout << "****************************************" << endl;
 
 	cout << "Problem 14" << endl;
+	char test141[16] = {'r', 'a', 'i', 'n','r', 'a', 'i', 'n','r', 'a', 'i', 'n','r', 'a', 'i', 'n'};
+	matrixDiagonal(test141,16);
+
 	cout << "****************************************" << endl;
 
 	return 0;
 }
-
 
 void printGreetings() {
 	cout << "!!!Hello, world!!!" << endl;
@@ -204,17 +206,16 @@ void sumNumber(int x) {
 	cout << sum << endl;
 }
 
-
-void binaryToDemial(char* x){
-	int sum = 0,base =1;
+void binaryToDemial(char *x) {
+	int sum = 0, base = 1;
 	int i = strlen(x);
-	while (i>0){
-		int last_digit = x[i-1] - '0';
+	while (i > 0) {
+		int last_digit = x[i - 1] - '0';
 		sum = sum + last_digit * base;
 		base = base * 2;
 		i--;
 	}
-	cout << sum<< endl;
+	cout << sum << endl;
 }
 
 bool isPalindrome(char word[]) {
@@ -228,7 +229,6 @@ bool isPalindrome(char word[]) {
 	return true;
 }
 
-
 void printCharArr(char string[], int lenth) {
 	for (int i = 0; i < lenth; i++) {
 		cout << string[i];
@@ -239,11 +239,11 @@ void printCharArr(char string[], int lenth) {
 char* inverseString(char string[], int lenth) {
 	char temp;
 	int halfLen = lenth / 2;
-		for (int i = 0; i < halfLen; i++) {
-			temp = string[i];
-			string[i] = string[lenth - i - 1];
-			string[lenth - i - 1] = temp;
-		}
+	for (int i = 0; i < halfLen; i++) {
+		temp = string[i];
+		string[i] = string[lenth - i - 1];
+		string[lenth - i - 1] = temp;
+	}
 	return string;
 
 }
@@ -254,17 +254,35 @@ void printString(char string[], int lenth) {
 }
 
 
-//void printDiagonal(char **charMat, int matLen ){
-//
-//}
-//
-//void matrixDiagonal(char charArr[], int arrLen){
-//	int matLen = sqrt(arrLen);
-//	char charMat[matLen][matLen];
-//
-//	printDiagonal(charMat, matLen);
-//}
-//
+void matrixDiagonal(char charArr[], int arrLen) {
+	int matLen = sqrt(arrLen) - 1;
+	char charMat[matLen][matLen];
+
+	for(int i = 0, j = 0, k = 0; i < matLen*matLen; i++){
+		charMat[j][k] = charArr[i];
+		cout << charMat[j][k];
+		k++;
+		if(k == matLen+1){
+			j++;
+			k = 0;
+			cout << "\n";
+		}
+
+	}
+	cout << charMat[1][1];
+	for (int i = 0; i < matLen; i++) {
+		cout << charMat[i][i];
+
+	}
+	cout << "\n";
+
+}
+
+
+
+
+
+
 
 
 
