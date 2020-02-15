@@ -5,9 +5,9 @@
  * TA: Laura
  *
  *
- *  Created on: Feb 14, 2020
- *  Author: jessicawu
- *  Memo: This file contains functions for lab 1. The functions aren’t necessarily related
+ * Created on: Feb 14, 2020
+ * Author: jessicawu
+ * Memo: This file contains functions for lab 1. The functions aren’t necessarily related
  * in any way other than that they are required for lab 1.
  */
 
@@ -95,6 +95,8 @@ void verticalWord(char word[]) {
 		cout << word[i] << endl;
 	}
 }
+
+
 
 
 
