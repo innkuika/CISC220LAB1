@@ -58,19 +58,18 @@ void convertDigit(int);
 
 void printWord(char word[]);
 void sumNumber(int n);
-void binaryToDemial(char *);
+void binaryToDemial(char*);
 void perfectNumber();
 void uniqueArray(int numList[], int len);
 void printWord(char*);
 void sumNumber(int);
 
 bool isPalindrome(char*);
-void drawDiamond(int x);
+void drawDiamond(int);
 void printString(char[], int);
-void shiftArr(int *, int, int);
+void shiftArr(int*, int, int);
 void matrixDiagonal(char[], int);
 void transposeMat(int, int, int**);
-
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -142,7 +141,6 @@ int main() {
 	drawDiamond(5);
 	cout << "****************************************" << endl;
 
-<<<<<<< HEAD
 	cout << "Problem 12" << endl;
 	int test121[11] = { 3, 2, 3, 5, 1, 2, 3, 44, 2, 6, 1 };
 	int test122[8] = { 23, 46, 17, 19, 22, 18, 46, 2 };
@@ -150,18 +148,16 @@ int main() {
 	uniqueArray(test121, 11);
 	uniqueArray(test122, 8);
 	uniqueArray(test123, 14);
-=======
+
 	cout << "Problem 13" << endl;
-	int test131[6] = {1,2,3,4,5,6};
-	int test132[9] = {3,7,2,6,4,3,1,9,8};
-	int test133[4] = {7,2,4,5};
+	int test131[6] = { 1, 2, 3, 4, 5, 6 };
+	int test132[9] = { 3, 7, 2, 6, 4, 3, 1, 9, 8 };
+	int test133[4] = { 7, 2, 4, 5 };
 
-	shiftArr(test131,6,2);
-	shiftArr(test132,9,4);
-	shiftArr(test133,4,1);
+	shiftArr(test131, 6, 2);
+	shiftArr(test132, 9, 4);
+	shiftArr(test133, 4, 1);
 
-
->>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
 	cout << "****************************************" << endl;
 
 	cout << "Problem 14" << endl;
@@ -299,26 +295,34 @@ void uniqueArray(int numList[], int len) {
 }
 
 void drawDiamond(int n) {
-	for (int i = 0; i <= n; i++) {
-		for (int j = 1; j <= n - 1; j--) {
+	for (int i = 1; i <= n; i++) {
+		for (int j = 0; j <= n - i; j++) {
+			cout << "*";
+		}
+		for (int j = 1; j <= 2 * (i - 1); j++) {
 			cout << " ";
 		}
-		for (j = 1; j <= 2 * i - 1; j++) {
+		for (int j = 0; j <= n - i; j++) {
 			cout << "*";
-			cout << endl;
-		}
-	}
-}
-	for (int i = n - 1; i >= 1; i--) {
-		for (int j = 1; j <= n - i; j++) {
-			cout << " ";
-		}
-		for (int j = 1; j <= 2 * i - 1; j++) {
-			cout << "*";
-			cout << endl;
 		}
 
+		cout << endl;
 	}
+
+	for (int i = 1; i <= n; i++) {
+		for (int j = 1; j <= i; j++) {
+			cout << "*";
+		}
+		for (int j = 1; j <= 2 * (n - i); j++) {
+			cout << " ";
+		}
+		for (int j = 1; j <= i; j++) {
+			cout << "*";
+		}
+
+		cout << endl;
+	}
+
 }
 
 bool isPalindrome(char word[]) {
@@ -377,47 +381,42 @@ void matrixDiagonal(char charArr[], int arrLen) {
 
 }
 
-<<<<<<< HEAD
-void transposeMat( int x, int y,int intArr[x][y]) {
-=======
-void transposeMat( int x, int y,int **intArr){
->>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
-	int row = x;
-	int col = y;
+//void transposeMat( int x, int y,int intArr[][]) {
+//
+//
+//	int row = x;
+//	int col = y;
+//
+//	int tranMat[row-1][col-1];
+//	for(int i = y-1, j = 0, h = 0, k = 0; (i == y - 1) and (j == x - 1);) {
+//		tranMat[h][k] = intArr[i][j];
+//		cout << tranMat[h][k];
+//
+//		k++;
+//		i--;
+//
+//		if(k == col - 1) {
+//			h++;
+//			k = 0;
+//			cout << "\n";
+//		}
+//		if(i == 0) {
+//			j++;
+//			i = y - 1;
+//		}
+//	}
+//
+//}
 
-	int tranMat[row-1][col-1];
-	for(int i = y-1, j = 0, h = 0, k = 0; (i == y - 1) and (j == x - 1);) {
-		tranMat[h][k] = intArr[i][j];
-		cout << tranMat[h][k];
-
-		k++;
-		i--;
-
-		if(k == col - 1) {
-			h++;
-			k = 0;
-			cout << "\n";
-		}
-		if(i == 0) {
-			j++;
-			i = y - 1;
-		}
-	}
-
-}
-
-<<<<<<< HEAD
-=======
-void shiftArr(int *intArr, int len, int offset){
+void shiftArr(int *intArr, int len, int offset) {
 	int newArr[len];
-	for(int i = offset, j = 0; j < len; j++, i++){
+	for (int i = offset, j = 0; j < len; j++, i++) {
 		newArr[j] = intArr[i];
-		cout << newArr[j]<<' ';
-		if(i == len - 1)i = -1;
+		cout << newArr[j] << ' ';
+		if (i == len - 1)
+			i = -1;
 
 	}
 	cout << "\n";
 }
 
-
->>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
