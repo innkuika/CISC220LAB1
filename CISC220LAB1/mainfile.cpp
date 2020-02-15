@@ -67,8 +67,10 @@ void sumNumber(int);
 bool isPalindrome(char*);
 
 void printString(char[], int);
+void shiftArr(int *, int, int);
 void matrixDiagonal(char[], int);
 void transposeMat(int, int,int**);
+
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -146,7 +148,17 @@ int main() {
 	uniqueArray(test123,14);
 	cout << "****************************************" << endl;
 
+	cout << "Problem 13" << endl;
+	int test131[6] = {1,2,3,4,5,6};
+	int test132[9] = {3,7,2,6,4,3,1,9,8};
+	int test133[4] = {7,2,4,5};
 
+	shiftArr(test131,6,2);
+	shiftArr(test132,9,4);
+	shiftArr(test133,4,1);
+
+
+	cout << "****************************************" << endl;
 
 	cout << "Problem 14" << endl;
 	char test141[16] = { 'r', 'a', 'i', 'n', 'r', 'a', 'i', 'n', 'r', 'a', 'i',
@@ -362,5 +374,15 @@ void transposeMat( int x, int y,int **intArr){
 
 }
 
+void shiftArr(int *intArr, int len, int offset){
+	int newArr[len];
+	for(int i = offset, j = 0; j < len; j++, i++){
+		newArr[j] = intArr[i];
+		cout << newArr[j]<<' ';
+		if(i == len - 1)i = -1;
+
+	}
+	cout << "\n";
+}
 
 
