@@ -60,15 +60,15 @@ void printWord(char word[]);
 void sumNumber(int n);
 void binaryToDemial(char *);
 void perfectNumber();
-void uniqueArray(int numList[],int len);
+void uniqueArray(int numList[], int len);
 void printWord(char*);
 void sumNumber(int);
 
 bool isPalindrome(char*);
-
+void drawDiamond(int x);
 void printString(char[], int);
 void matrixDiagonal(char[], int);
-void transposeMat(int, int,int**);
+void transposeMat(int, int, int**);
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -136,17 +136,18 @@ int main() {
 	perfectNumber();
 	cout << "****************************************" << endl;
 
-
-	cout << "Problem 12" << endl;
-    int test121[11] = {3,2,3,5,1,2,3,44,2,6,1};
-    int test122[8] = {23,46,17,19,22,18,46,2};
-    int test123[14] = {1,0,1,1,0,0,1,0,1,1,0,2,1,2};
-	uniqueArray(test121,11);
-	uniqueArray(test122,8);
-	uniqueArray(test123,14);
+	cout << "Problem 11" << endl;
+	drawDiamond(5);
 	cout << "****************************************" << endl;
 
-
+	cout << "Problem 12" << endl;
+	int test121[11] = { 3, 2, 3, 5, 1, 2, 3, 44, 2, 6, 1 };
+	int test122[8] = { 23, 46, 17, 19, 22, 18, 46, 2 };
+	int test123[14] = { 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 2 };
+	uniqueArray(test121, 11);
+	uniqueArray(test122, 8);
+	uniqueArray(test123, 14);
+	cout << "****************************************" << endl;
 
 	cout << "Problem 14" << endl;
 	char test141[16] = { 'r', 'a', 'i', 'n', 'r', 'a', 'i', 'n', 'r', 'a', 'i',
@@ -161,7 +162,7 @@ int main() {
 	cout << "****************************************" << endl;
 
 	cout << "Problem 15" << endl;
-	int test151[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+	int test151[3][3] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 
 	//transposeMat(3, 3,test151);
 
@@ -268,19 +269,43 @@ void perfectNumber() {
 	cout << "\n";
 }
 
-void uniqueArray(int numList[],int len){
-	for(int i=0; i < len; i++){
-	    int countTime = 0;
-		for (int j= 0; j< len;j++){
-			if (numList[i]== numList[j]){
-			    countTime+=1;
+void uniqueArray(int numList[], int len) {
+	for (int i = 0; i < len; i++) {
+		int countTime = 0;
+		for (int j = 0; j < len; j++) {
+			if (numList[i] == numList[j]) {
+				countTime += 1;
 			}
 		}
 		if (countTime == 1)
-		cout<< numList[i] <<" ";
+			cout << numList[i] << " ";
 	}
 	cout << "\n ";
 }
+
+void drawDiamond(int n) {
+	for (int i = 0; i <= n; i++) {
+		for (int j = 1; j <= n - 1; j--) {
+			cout << " ";
+		}
+		for (j = 1; j <= 2 * i - 1; j++) {
+			cout << "*";
+			cout << endl;
+		}
+	}
+}
+	for (int i = n - 1; i >= 1; i--) {
+		for (int j = 1; j <= n - i; j++) {
+			cout << " ";
+		}
+		for (int j = 1; j <= 2 * i - 1; j++) {
+			cout << "*";
+			cout << endl;
+		}
+
+	}
+}
+
 bool isPalindrome(char word[]) {
 	int halfLen = strlen(word) / 2;
 	for (int i = 0; i < halfLen; i++) {
@@ -337,30 +362,28 @@ void matrixDiagonal(char charArr[], int arrLen) {
 
 }
 
-void transposeMat( int x, int y,int intArr[x][y]){
+void transposeMat( int x, int y,int intArr[x][y]) {
 	int row = x;
 	int col = y;
 
 	int tranMat[row-1][col-1];
-	for(int i = y-1, j = 0, h = 0, k = 0; (i == y - 1) and (j == x - 1);){
+	for(int i = y-1, j = 0, h = 0, k = 0; (i == y - 1) and (j == x - 1);) {
 		tranMat[h][k] = intArr[i][j];
 		cout << tranMat[h][k];
 
 		k++;
 		i--;
 
-		if(k == col - 1){
+		if(k == col - 1) {
 			h++;
 			k = 0;
 			cout << "\n";
 		}
-		if(i == 0){
+		if(i == 0) {
 			j++;
 			i = y - 1;
 		}
 	}
 
 }
-
-
 
