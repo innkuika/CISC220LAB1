@@ -53,9 +53,16 @@ void verticalWord(char[]);
  */
 
 void convertDigit(int);
+<<<<<<< HEAD
 void printWord(char word[]);
 void sumNumber(int n);
 void binaryToDemial(char* x);
+=======
+void printWord(char*);
+void sumNumber(int);
+
+bool isPalindrome(char*);
+>>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -87,6 +94,12 @@ int main() {
 	printWord("chorfafledey");
 	printWord("nairbobylte");
 
+	cout << "****************************************" << endl;
+
+	cout << "Problem 6" << endl;
+	std::cout << std::boolalpha << isPalindrome("mom") << endl;
+	std::cout << std::boolalpha << isPalindrome("palindrome") << endl;
+	std::cout << std::boolalpha << isPalindrome("faoaf") << endl;
 
 	cout << "****************************************" << endl;
 
@@ -125,52 +138,53 @@ void verticalWord(char word[]) {
 	}
 }
 
-void convertDigit(int x){
+void convertDigit(int x) {
 
-		if (x == 0){
-			cout << "zero" << endl;
-		}else if(x==1){
-			cout << "one" << endl;
-		}else if(x==2){
-			cout << "two" << endl;
-		}else if(x==3){
-			cout << "three" << endl;
-		}else if(x==4){
-			cout << "four" << endl;
-		}else if(x==5){
-			cout << "five" << endl;
-		}else if(x==6){
-			cout << "six" << endl;
-		}else if(x==7){
-			cout << "seven" << endl;
-		}else if(x==8){
-			cout << "eight" << endl;
-		}else if(x==9){
-			cout << "nine" << endl;
-		}
+	if (x == 0) {
+		cout << "zero" << endl;
+	} else if (x == 1) {
+		cout << "one" << endl;
+	} else if (x == 2) {
+		cout << "two" << endl;
+	} else if (x == 3) {
+		cout << "three" << endl;
+	} else if (x == 4) {
+		cout << "four" << endl;
+	} else if (x == 5) {
+		cout << "five" << endl;
+	} else if (x == 6) {
+		cout << "six" << endl;
+	} else if (x == 7) {
+		cout << "seven" << endl;
+	} else if (x == 8) {
+		cout << "eight" << endl;
+	} else if (x == 9) {
+		cout << "nine" << endl;
+	}
 }
 
-void printWord(char word[]){
+void printWord(char word[]) {
 	int i = 0;
-    int j= strlen(word);
-	while(i<j){
+	int j = strlen(word);
+	while (i < j) {
 		cout << word[i];
-		i+=2;
+		i += 2;
 	}
 	cout << "\n";
 
 }
 
-void sumNumber(int x){
-	int sum = 0,m;
-	while(x>0){
-		m = x%10;
+void sumNumber(int x) {
+	int sum = 0, m;
+	while (x > 0) {
+		m = x % 10;
 		sum = sum + m;
-		x = x/10;
+		x = x / 10;
 	}
-	cout<<sum<<endl;
+	cout << sum << endl;
 }
 
+<<<<<<< HEAD
 void binaryToDemial(char* x){
 	int sum = 0,base =1;
 	int i = strlen(x);
@@ -182,3 +196,16 @@ void binaryToDemial(char* x){
 	}
 	cout << sum<< endl;
 }
+=======
+bool isPalindrome(char word[]) {
+	int halfLen = strlen(word) / 2;
+	for (int i = 0; i < halfLen; i++) {
+		if (word[i] != word[strlen(word) - i -1]){
+			return false;
+		}
+
+	}
+	return true;
+}
+
+>>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
