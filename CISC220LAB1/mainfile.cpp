@@ -55,20 +55,18 @@ void verticalWord(char[]);
  */
 
 void convertDigit(int);
-<<<<<<< HEAD
+
 void printWord(char word[]);
 void sumNumber(int n);
 void binaryToDemial(char* x);
-=======
+
 void printWord(char*);
 void sumNumber(int);
 
 bool isPalindrome(char*);
-<<<<<<< HEAD
->>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
-=======
+
 void printString(char[], int);
->>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
+
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -127,22 +125,18 @@ int main() {
 	sumNumber(1240293);
 	cout << "****************************************" << endl;
 
-<<<<<<< HEAD
+
 	cout << "Problem 9" << endl;
 	binaryToDemial("10110");
 	binaryToDemial("1000011");
 	cout << "****************************************" << endl;
-	return 0;
-	}
 
-
-=======
 	cout << "Problem 14" << endl;
 	cout << "****************************************" << endl;
 
-	return (0);
-} //main
->>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
+	return 0;
+}
+
 
 void printGreetings() {
 	cout << "!!!Hello, world!!!" << endl;
@@ -210,7 +204,7 @@ void sumNumber(int x) {
 	cout << sum << endl;
 }
 
-<<<<<<< HEAD
+
 void binaryToDemial(char* x){
 	int sum = 0,base =1;
 	int i = strlen(x);
@@ -222,7 +216,7 @@ void binaryToDemial(char* x){
 	}
 	cout << sum<< endl;
 }
-=======
+
 bool isPalindrome(char word[]) {
 	int halfLen = strlen(word) / 2;
 	for (int i = 0; i < halfLen; i++) {
@@ -234,9 +228,7 @@ bool isPalindrome(char word[]) {
 	return true;
 }
 
-<<<<<<< HEAD
->>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
-=======
+
 void printCharArr(char string[], int lenth) {
 	for (int i = 0; i < lenth; i++) {
 		cout << string[i];
@@ -261,19 +253,17 @@ void printString(char string[], int lenth) {
 	printCharArr(string, lenth);
 }
 
-
-void printDiagonal(char charMat[][], int matLen ){
-
-}
-void matrixDiagonal(char charArr[], int arrLen){
-	int matLen = sqrt(arrLen);
-	char charMat[matLen][matLen];
-
-	printDiagonal(charMat, matLen);
-}
-
-
-
+//
+//void printDiagonal(char charMat[][], int matLen ){
+//
+//}
+//
+//void matrixDiagonal(char charArr[], int arrLen){
+//	int matLen = sqrt(arrLen);
+//	char charMat[matLen][matLen];
+//
+//	printDiagonal(charMat, matLen);
+//}
 
 
 
@@ -281,4 +271,4 @@ void matrixDiagonal(char charArr[], int arrLen){
 
 
 
->>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
+
