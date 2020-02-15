@@ -172,7 +172,7 @@ void sumNumber(int x){
 }
 
 void binaryToDemial(char* x){
-	int sum = 0, base =1;
+	int sum = 0,base =1;
 	int i = strlen(x);
 	while (i>0){
 		int last_digit = x[i-1];
