@@ -209,7 +209,7 @@ void binaryToDemial(char* x){
 	int sum = 0,base =1;
 	int i = strlen(x);
 	while (i>0){
-		int last_digit = x[i-1];
+		int last_digit = x[i-1] - '0';
 		sum = sum + last_digit * base;
 		base = base * 2;
 		i--;
@@ -253,8 +253,8 @@ void printString(char string[], int lenth) {
 	printCharArr(string, lenth);
 }
 
-//
-//void printDiagonal(char charMat[][], int matLen ){
+
+//void printDiagonal(char **charMat, int matLen ){
 //
 //}
 //
@@ -264,7 +264,7 @@ void printString(char string[], int lenth) {
 //
 //	printDiagonal(charMat, matLen);
 //}
-
+//
 
 
 
