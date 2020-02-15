@@ -59,7 +59,7 @@ void convertDigit(int);
 void printWord(char word[]);
 void sumNumber(int n);
 void binaryToDemial(char* x);
-
+void perfectNumber();
 void printWord(char*);
 void sumNumber(int);
 
@@ -129,6 +129,10 @@ int main() {
 	cout << "Problem 9" << endl;
 	binaryToDemial("10110");
 	binaryToDemial("1000011");
+	cout << "****************************************" << endl;
+
+	cout << "Problem 10" << endl;
+    perfectNumber();
 	cout << "****************************************" << endl;
 
 	cout << "Problem 14" << endl;
@@ -217,6 +221,26 @@ void binaryToDemial(char* x){
 	cout << sum<< endl;
 }
 
+void perfectNumber(){
+	int div = 0, sum=0;
+	for (int i=2;i<10000;i++){
+		for (int j=1;j<i;j++){
+			div = j % i;
+			if(div == 0){
+				sum+=i;
+			}
+		if(sum ==j){
+			cout << "\n" ;
+			cout << j ;
+			cout<<" is a perfect number.";
+		}else{
+			cout << "\n";
+			cout << j;
+			cout <<" is not a perfect number.";
+		}
+}
+}
+}
 bool isPalindrome(char word[]) {
 	int halfLen = strlen(word) / 2;
 	for (int i = 0; i < halfLen; i++) {
@@ -252,23 +276,3 @@ void printString(char string[], int lenth) {
 	string = inverseString(string, lenth);
 	printCharArr(string, lenth);
 }
-
-
-//void printDiagonal(char **charMat, int matLen ){
-//
-//}
-//
-//void matrixDiagonal(char charArr[], int arrLen){
-//	int matLen = sqrt(arrLen);
-//	char charMat[matLen][matLen];
-//
-//	printDiagonal(charMat, matLen);
-//}
-//
-
-
-
-
-
-
-
