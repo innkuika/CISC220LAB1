@@ -54,6 +54,7 @@ void verticalWord(char[]);
 
 void convertDigit(int);
 void printWord(char word[]);
+void sumNumber(int n);
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -84,6 +85,12 @@ int main() {
 	printWord("prouteavtnos");
 	printWord("chorfafledey");
 	printWord("nairbobylte");
+	cout << "****************************************" << endl;
+
+	cout << "Problem 8" << endl;
+	sumNumber(3248);
+	sumNumber(823);
+	sumNumber(1240293);
 	cout << "****************************************" << endl;
 
 	return (0);
@@ -144,10 +151,15 @@ void printWord(char word[]){
 
 }
 
-
-
-
-
+void sumNumber(int x){
+	int sum = 0,m;
+	while(x>0){
+		m = x%10;
+		sum = sum + m;
+		x = x/10;
+	}
+	cout<<sum<<endl;
+}
 
 
 
