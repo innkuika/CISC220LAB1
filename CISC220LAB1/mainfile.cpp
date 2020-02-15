@@ -53,6 +53,8 @@ void verticalWord(char[]);
  */
 
 void convertDigit(int);
+void printWord(char word[]);
+void sumNumber(int n);
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -71,6 +73,24 @@ int main() {
 	verticalWord("byte");
 	cout << "\n" << endl;
 	verticalWord("hi");
+	cout << "****************************************" << endl;
+
+	cout << "Problem 4" << endl;
+	convertDigit(3);
+	convertDigit(7);
+	convertDigit(0);
+	cout << "****************************************" << endl;
+
+	cout << "Problem 5" << endl;
+	printWord("prouteavtnos");
+	printWord("chorfafledey");
+	printWord("nairbobylte");
+	cout << "****************************************" << endl;
+
+	cout << "Problem 8" << endl;
+	sumNumber(3248);
+	sumNumber(823);
+	sumNumber(1240293);
 	cout << "****************************************" << endl;
 
 	return (0);
@@ -96,30 +116,50 @@ void verticalWord(char word[]) {
 	}
 }
 
+void convertDigit(int x){
 
+		if (x == 0){
+			cout << "zero" << endl;
+		}else if(x==1){
+			cout << "one" << endl;
+		}else if(x==2){
+			cout << "two" << endl;
+		}else if(x==3){
+			cout << "three" << endl;
+		}else if(x==4){
+			cout << "four" << endl;
+		}else if(x==5){
+			cout << "five" << endl;
+		}else if(x==6){
+			cout << "six" << endl;
+		}else if(x==7){
+			cout << "seven" << endl;
+		}else if(x==8){
+			cout << "eight" << endl;
+		}else if(x==9){
+			cout << "nine" << endl;
+		}
+}
 
+void printWord(char word[]){
+	int i = 0;
+    int j= strlen(word);
+	while(word[i]>j){
+		cout << word[i] << endl;
+		i+=2;
+	}
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void sumNumber(int x){
+	int sum = 0,m;
+	while(x>0){
+		m = x%10;
+		sum = sum + m;
+		x = x/10;
+	}
+	cout<<sum<<endl;
+}
 
 
 
