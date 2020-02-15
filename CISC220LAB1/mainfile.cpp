@@ -55,6 +55,7 @@ void verticalWord(char[]);
 void convertDigit(int);
 void printWord(char word[]);
 void sumNumber(int n);
+void binaryToDemial(char* x);
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -95,8 +96,14 @@ int main() {
 	sumNumber(1240293);
 	cout << "****************************************" << endl;
 
-	return (0);
-} //main
+	cout << "Problem 9" << endl;
+	binaryToDemial("10110");
+	binaryToDemial("1000011");
+	cout << "****************************************" << endl;
+	return 0;
+	}
+
+
 
 void printGreetings() {
 	cout << "!!!Hello, world!!!" << endl;
@@ -164,9 +171,14 @@ void sumNumber(int x){
 	cout<<sum<<endl;
 }
 
-
-
-
-
-
-
+void binaryToDemial(char* x){
+	int sum = 0, base =1;
+	int i = strlen(x);
+	while (i>0){
+		int last_digit = x[i-1];
+		sum = sum + last_digit * base;
+		base = base * 2;
+		i--;
+	}
+	cout << sum<< endl;
+}
