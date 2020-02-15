@@ -53,6 +53,7 @@ void verticalWord(char[]);
  */
 
 void convertDigit(int);
+void printWord(char word[]);
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -77,6 +78,12 @@ int main() {
 	convertDigit(3);
 	convertDigit(7);
 	convertDigit(0);
+	cout << "****************************************" << endl;
+
+	cout << "Problem 5" << endl;
+	printWord("prouteavtnos");
+	printWord("chorfafledey");
+	printWord("nairbobylte");
 	cout << "****************************************" << endl;
 
 	return (0);
@@ -127,23 +134,15 @@ void convertDigit(int x){
 		}
 }
 
+void printWord(char word[]){
+	int i = 0;
+    int j= strlen(word);
+	while(word[i]>j){
+		cout << word[i] << endl;
+		i+=2;
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
