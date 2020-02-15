@@ -58,7 +58,11 @@ void convertDigit(int);
 
 void printWord(char word[]);
 void sumNumber(int n);
+
 void binaryToDemial(char *x);
+
+void binaryToDemial(char *x);
+void perfectNumber();
 
 void printWord(char*);
 void sumNumber(int);
@@ -131,9 +135,21 @@ int main() {
 	binaryToDemial("1000011");
 	cout << "****************************************" << endl;
 
+	cout << "Problem 10" << endl;
+	perfectNumber();
+	cout << "****************************************" << endl;
+
 	cout << "Problem 14" << endl;
-	char test141[16] = {'r', 'a', 'i', 'n','r', 'a', 'i', 'n','r', 'a', 'i', 'n','r', 'a', 'i', 'n'};
-	matrixDiagonal(test141,16);
+	char test141[16] = { 'r', 'a', 'i', 'n', 'r', 'a', 'i', 'n', 'r', 'a', 'i',
+			'n', 'r', 'a', 'i', 'n' };
+	char test142[12] = { 'c', 'a', 't', 'c', 'a', 't', 'c', 'a', 't', 'c', 'a',
+			't' };
+	char test143[9] =  { 'd', 'o', 'g', 'd', 'o', 'g','d', 'o', 'g'};
+
+
+	matrixDiagonal(test141, 16);
+	matrixDiagonal(test142, 12);
+	matrixDiagonal(test143, 9);
 
 	cout << "****************************************" << endl;
 
@@ -218,6 +234,22 @@ void binaryToDemial(char *x) {
 	cout << sum << endl;
 }
 
+void perfectNumber() {
+	int div = 0, sum = 0;
+	for (int i = 2; i < 10000; i++) {
+		for (int j = 1; j < i; j++) {
+			div = j % i;
+			if (div == 0) {
+				sum += i;
+			}
+			if (sum == j) {
+				cout << "\n";
+				cout << j;
+				cout << " is a perfect number.";
+			}
+		}
+	}
+}
 bool isPalindrome(char word[]) {
 	int halfLen = strlen(word) / 2;
 	for (int i = 0; i < halfLen; i++) {
@@ -253,40 +285,24 @@ void printString(char string[], int lenth) {
 	printCharArr(string, lenth);
 }
 
-
 void matrixDiagonal(char charArr[], int arrLen) {
 	int matLen = sqrt(arrLen) - 1;
 	char charMat[matLen][matLen];
 
-	for(int i = 0, j = 0, k = 0; i < matLen*matLen; i++){
+	for (int i = 0, j = 0, k = 0; i < (matLen + 1) * (matLen + 1); i++) {
 		charMat[j][k] = charArr[i];
-		cout << charMat[j][k];
 		k++;
-		if(k == matLen+1){
+		if (k == matLen + 1) {
 			j++;
 			k = 0;
-			cout << "\n";
 		}
-
 	}
-	cout << charMat[1][1];
-	for (int i = 0; i < matLen; i++) {
+
+	for (int i = 0; i <= matLen; i++) {
 		cout << charMat[i][i];
 
 	}
 	cout << "\n";
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
