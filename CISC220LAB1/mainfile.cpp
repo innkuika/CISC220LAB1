@@ -14,6 +14,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
+
 using namespace std;
 
 void printGreetings();
@@ -62,6 +64,10 @@ void printWord(char*);
 void sumNumber(int);
 
 bool isPalindrome(char*);
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
+=======
+void printString(char[], int);
 >>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
 
 int main() {
@@ -103,12 +109,25 @@ int main() {
 
 	cout << "****************************************" << endl;
 
+	cout << "Problem 7" << endl;
+
+	char test1[2] = {'e', 'h'};
+	char test2[3] = {'c','a','t'};
+	char test3[4] = {'r','a','i','n'};
+
+ 	printString(test1, 2);
+ 	printString(test2, 3);
+ 	printString(test3, 4);
+
+	cout << "****************************************" << endl;
+
 	cout << "Problem 8" << endl;
 	sumNumber(3248);
 	sumNumber(823);
 	sumNumber(1240293);
 	cout << "****************************************" << endl;
 
+<<<<<<< HEAD
 	cout << "Problem 9" << endl;
 	binaryToDemial("10110");
 	binaryToDemial("1000011");
@@ -117,6 +136,13 @@ int main() {
 	}
 
 
+=======
+	cout << "Problem 14" << endl;
+	cout << "****************************************" << endl;
+
+	return (0);
+} //main
+>>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
 
 void printGreetings() {
 	cout << "!!!Hello, world!!!" << endl;
@@ -200,12 +226,59 @@ void binaryToDemial(char* x){
 bool isPalindrome(char word[]) {
 	int halfLen = strlen(word) / 2;
 	for (int i = 0; i < halfLen; i++) {
-		if (word[i] != word[strlen(word) - i -1]){
+		if (word[i] != word[strlen(word) - i - 1]) {
 			return false;
 		}
 
 	}
 	return true;
 }
+
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
+=======
+void printCharArr(char string[], int lenth) {
+	for (int i = 0; i < lenth; i++) {
+		cout << string[i];
+	}
+	cout << "\n";
+}
+
+char* inverseString(char string[], int lenth) {
+	char temp;
+	int halfLen = lenth / 2;
+		for (int i = 0; i < halfLen; i++) {
+			temp = string[i];
+			string[i] = string[lenth - i - 1];
+			string[lenth - i - 1] = temp;
+		}
+	return string;
+
+}
+void printString(char string[], int lenth) {
+	printCharArr(string, lenth);
+	string = inverseString(string, lenth);
+	printCharArr(string, lenth);
+}
+
+
+void printDiagonal(char charMat[][], int matLen ){
+
+}
+void matrixDiagonal(char charArr[], int arrLen){
+	int matLen = sqrt(arrLen);
+	char charMat[matLen][matLen];
+
+	printDiagonal(charMat, matLen);
+}
+
+
+
+
+
+
+
+
+
 
 >>>>>>> branch 'master' of https://github.com/innkuika/CISC220LAB1
