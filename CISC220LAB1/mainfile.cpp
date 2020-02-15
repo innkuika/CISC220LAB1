@@ -58,7 +58,7 @@ void convertDigit(int);
 
 void printWord(char word[]);
 void sumNumber(int n);
-void binaryToDemial(char *x);
+void binaryToDemial(char *);
 void perfectNumber();
 void printWord(char*);
 void sumNumber(int);
@@ -67,6 +67,7 @@ bool isPalindrome(char*);
 
 void printString(char[], int);
 void matrixDiagonal(char[], int);
+void transposeMat(int, int,int**);
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -144,6 +145,13 @@ int main() {
 	matrixDiagonal(test141, 16);
 	matrixDiagonal(test142, 12);
 	matrixDiagonal(test143, 9);
+	cout << "****************************************" << endl;
+
+	cout << "Problem 15" << endl;
+	int test151[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+
+	//transposeMat(3, 3,test151);
+
 	cout << "****************************************" << endl;
 
 	return 0;
@@ -301,3 +309,31 @@ void matrixDiagonal(char charArr[], int arrLen) {
 	cout << "\n";
 
 }
+
+void transposeMat( int x, int y,int intArr[x][y]){
+	int row = x;
+	int col = y;
+
+	int tranMat[row-1][col-1];
+	for(int i = y-1, j = 0, h = 0, k = 0; (i == y - 1) and (j == x - 1);){
+		tranMat[h][k] = intArr[i][j];
+		cout << tranMat[h][k];
+
+		k++;
+		i--;
+
+		if(k == col - 1){
+			h++;
+			k = 0;
+			cout << "\n";
+		}
+		if(i == 0){
+			j++;
+			i = y - 1;
+		}
+	}
+
+}
+
+
+
