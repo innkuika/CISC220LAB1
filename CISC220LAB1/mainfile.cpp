@@ -260,16 +260,18 @@ void perfectNumber() {
 	cout << "\n";
 }
 
-void unqiqueArray(int numList[],int len){
+void uniqueArray(int numList[],int len){
 	for(int i=0; i < len; i++){
-		for (int j=0; j< len;j++){
+	    int countTime = 0;
+		for (int j= 0; j< len;j++){
 			if (numList[i]== numList[j]){
-				break;
+			    countTime+=1;
 			}
-		if (i=j)
-			cout << numList[i];
 		}
+		if (countTime == 1)
+		cout<< numList[i] <<" ";
 	}
+	cout << "\n ";
 }
 bool isPalindrome(char word[]) {
 	int halfLen = strlen(word) / 2;
@@ -324,7 +326,5 @@ void matrixDiagonal(char charArr[], int arrLen) {
 
 	}
 	cout << "\n";
-
-}
 
 }
