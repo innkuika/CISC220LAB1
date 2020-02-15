@@ -85,6 +85,8 @@ int main() {
 	printWord("prouteavtnos");
 	printWord("chorfafledey");
 	printWord("nairbobylte");
+
+
 	cout << "****************************************" << endl;
 
 	cout << "Problem 8" << endl;
@@ -144,10 +146,11 @@ void convertDigit(int x){
 void printWord(char word[]){
 	int i = 0;
     int j= strlen(word);
-	while(word[i]>j){
-		cout << word[i] << endl;
+	while(i<j){
+		cout << word[i];
 		i+=2;
 	}
+	cout << "\n";
 
 }
 
