@@ -58,20 +58,14 @@ void convertDigit(int);
 
 void printWord(char word[]);
 void sumNumber(int n);
-
-void binaryToDemial(char *x);
-
-void binaryToDemial(char *x);
+void binaryToDemial(char* x);
 void perfectNumber();
-
 void printWord(char*);
 void sumNumber(int);
 
 bool isPalindrome(char*);
 
 void printString(char[], int);
-
-void matrixDiagonal(char*, int);
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -114,13 +108,13 @@ int main() {
 
 	cout << "Problem 7" << endl;
 
-	char test71[2] = { 'e', 'h' };
-	char test72[3] = { 'c', 'a', 't' };
-	char test73[4] = { 'r', 'a', 'i', 'n' };
+	char test1[2] = { 'e', 'h' };
+	char test2[3] = { 'c', 'a', 't' };
+	char test3[4] = { 'r', 'a', 'i', 'n' };
 
-	printString(test71, 2);
-	printString(test72, 3);
-	printString(test73, 4);
+	printString(test1, 2);
+	printString(test2, 3);
+	printString(test3, 4);
 
 	cout << "****************************************" << endl;
 
@@ -140,17 +134,6 @@ int main() {
 	cout << "****************************************" << endl;
 
 	cout << "Problem 14" << endl;
-	char test141[16] = { 'r', 'a', 'i', 'n', 'r', 'a', 'i', 'n', 'r', 'a', 'i',
-			'n', 'r', 'a', 'i', 'n' };
-	char test142[12] = { 'c', 'a', 't', 'c', 'a', 't', 'c', 'a', 't', 'c', 'a',
-			't' };
-	char test143[9] =  { 'd', 'o', 'g', 'd', 'o', 'g','d', 'o', 'g'};
-
-
-	matrixDiagonal(test141, 16);
-	matrixDiagonal(test142, 12);
-	matrixDiagonal(test143, 9);
-
 	cout << "****************************************" << endl;
 
 	return 0;
@@ -222,7 +205,7 @@ void sumNumber(int x) {
 	cout << sum << endl;
 }
 
-void binaryToDemial(char *x) {
+void binaryToDemial(char* x) {
 	int sum = 0, base = 1;
 	int i = strlen(x);
 	while (i > 0) {
@@ -235,14 +218,13 @@ void binaryToDemial(char *x) {
 }
 
 void perfectNumber() {
-	int div = 0, sum = 0;
-	for (int i = 2; i < 10000; i++) {
+	int sum = 0;
+	for (int i = 2; i < 100; i++) {
 		for (int j = 1; j < i; j++) {
-			div = j % i;
-			if (div == 0) {
+			if (j % i == 0) {
 				sum += i;
 			}
-			if (sum == j) {
+			if (sum == i) {
 				cout << "\n";
 				cout << j;
 				cout << " is a perfect number.";
@@ -284,25 +266,3 @@ void printString(char string[], int lenth) {
 	string = inverseString(string, lenth);
 	printCharArr(string, lenth);
 }
-
-void matrixDiagonal(char charArr[], int arrLen) {
-	int matLen = sqrt(arrLen) - 1;
-	char charMat[matLen][matLen];
-
-	for (int i = 0, j = 0, k = 0; i < (matLen + 1) * (matLen + 1); i++) {
-		charMat[j][k] = charArr[i];
-		k++;
-		if (k == matLen + 1) {
-			j++;
-			k = 0;
-		}
-	}
-
-	for (int i = 0; i <= matLen; i++) {
-		cout << charMat[i][i];
-
-	}
-	cout << "\n";
-
-}
-
