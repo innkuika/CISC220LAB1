@@ -222,7 +222,7 @@ void printWord(char word[]) {
 		cout << word[i];
 		i += 2;
 	}
-	cout << "\n";
+	cout << "\n ";
 
 }
 
