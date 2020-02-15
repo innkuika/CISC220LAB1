@@ -60,6 +60,7 @@ void printWord(char word[]);
 void sumNumber(int n);
 void binaryToDemial(char *x);
 void perfectNumber();
+void uniqueArray(int numList[],int len);
 void printWord(char*);
 void sumNumber(int);
 
@@ -133,6 +134,18 @@ int main() {
 	cout << "Problem 10" << endl;
 	perfectNumber();
 	cout << "****************************************" << endl;
+
+
+	cout << "Problem 12" << endl;
+    int test121[11] = {3,2,3,5,1,2,3,44,2,6,1};
+    int test122[8] = {23,46,17,19,22,18,46,2};
+    int test123[14] = {1,0,1,1,0,0,1,0,1,1,0,2,1,2};
+	uniqueArray(test121,11);
+	uniqueArray(test122,8);
+	uniqueArray(test123,14);
+	cout << "****************************************" << endl;
+
+
 
 	cout << "Problem 14" << endl;
 	char test141[16] = { 'r', 'a', 'i', 'n', 'r', 'a', 'i', 'n', 'r', 'a', 'i',
@@ -246,6 +259,18 @@ void perfectNumber() {
 	}
 	cout << "\n";
 }
+
+void unqiqueArray(int numList[],int len){
+	for(int i=0; i < len; i++){
+		for (int j=0; j< len;j++){
+			if (numList[i]== numList[j]){
+				break;
+			}
+		if (i=j)
+			cout << numList[i];
+		}
+	}
+}
 bool isPalindrome(char word[]) {
 	int halfLen = strlen(word) / 2;
 	for (int i = 0; i < halfLen; i++) {
@@ -299,5 +324,7 @@ void matrixDiagonal(char charArr[], int arrLen) {
 
 	}
 	cout << "\n";
+
+}
 
 }
