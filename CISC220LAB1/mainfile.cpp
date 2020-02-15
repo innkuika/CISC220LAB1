@@ -150,7 +150,7 @@ int main() {
 	cout << "Problem 15" << endl;
 	int test151[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
 
-	//transposeMat(3, 3,test151);
+	//transposeMat(3, 3,&test151[0]);
 
 	cout << "****************************************" << endl;
 
@@ -310,7 +310,7 @@ void matrixDiagonal(char charArr[], int arrLen) {
 
 }
 
-void transposeMat( int x, int y,int intArr[x][y]){
+void transposeMat( int x, int y,int **intArr){
 	int row = x;
 	int col = y;
 
