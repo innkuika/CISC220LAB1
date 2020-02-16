@@ -19,7 +19,8 @@
 using namespace std;
 
 void printGreetings();
-/* Parameter: None
+/* No.Problem: 1
+ * Parameter: None
  * Return: None
  *
  * This function prints "Hello, world!!!" to the screen.
@@ -27,7 +28,8 @@ void printGreetings();
  */
 
 int powerCalculator(int, int);
-/* Parameter: x(base), y(power)
+/* No.Problem: 2
+ * Parameter: x(base), y(power)
  * Return: Result of x to the power of y.
  *
  * This function calculates x to the power of y and returns its result.
@@ -38,7 +40,8 @@ int powerCalculator(int, int);
  */
 
 void verticalWord(char[]);
-/* Parameter: a word
+/* No.Problem: 3
+ * Parameter: a word
  * Return: None
  *
  * This prints out every character in the string on its own line.
@@ -55,20 +58,162 @@ void verticalWord(char[]);
  */
 
 void convertDigit(int);
-
+/* No.Problem: 4
+ * Parameter: int, a input parameter has only one digit.
+ * Return: a string which shows the equivalent word.
+ *
+ * This function will transfer a single digit into the equivalent word.
+ * It is used to change the format of number.
+ *
+ *INPUT: 3 -> "three"
+ *INPUT: 7 -> "seven"
+ *INPUT: 0 -> "zero"
+ */
 void printWord(char word[]);
-void sumNumber(int n);
-void binaryToDemial(char*);
-void perfectNumber();
-void uniqueArray(int numList[], int len);
-void printWord(char*);
-void sumNumber(int);
-
+/* No.Problem: 5
+ * Parameter: word[], A string which are consists of many letters out of order.
+ * Return: None.
+ *
+ * This function prints the word of the current string by skipping the char one by one.
+ * It used to select specific letter to consist effective information for a mess-up string.
+ *
+ *INPUT: "prouteavtnos" -> potato
+ *INPUT: "chorfafledey" -> coffee
+ *INPUT: "nairbobylte" -> nibble
+ */
 bool isPalindrome(char*);
-void drawDiamond(int);
+/* No.Problem: 6
+ * Parameter: char *, take input as a string.
+ * Return: boolean.
+ *
+ * This function checks whether the world is palindrome. Palindrome is a word, phrase,
+ * or sequence that reads the same backward as forward, e.g., madam.
+ * It is used to check the palindrome word.
+ *
+ *INPUT: "mom" -> true
+ *INPUT: "palindrome" -> false
+ *INPUT: "amanaplanpanama" -> true
+ */
 void printString(char[], int);
+/* No.Problem: 7
+ * Parameter: char[] & int, numList[] is a string consists many char. int is the length of the string
+ * Return: None.
+ *
+ * This function will reverse strings which are provided.
+ * It is used to change reverse string.
+ *
+ *INPUT: "cat" -> tac
+ *INPUT: "byte" -> etyb
+ *INPUT: "hi" -> ih
+ */
+void sumNumber(int n);
+/* No.Problem: 8
+ * Parameter: int n, a large int which has many digits.
+ * Return: None.
+ *
+ * This function will add the digits in the number together and print out the sum.
+ * It is used to sum the digits of a larger number.
+ *
+ *INPUT: 3278 -> 17
+ *INPUT: 823 -> 13
+ *INPUT: 1240293 -> 21
+ */
+void binaryToDemial(char*);
+/* No.Problem: 9
+ * Parameter: char*, this is a string consist many numbers.
+ * Return: None.
+ *
+ * This function will transfer a binary number and convert it to a decimal number.
+ * It is used to know the decimal number which are represented by the binary number.
+ *
+ *INPUT: "10110" -> 22
+ *INPUT: "1000011" -> 67
+ */
+void perfectNumber();
+/* No.Problem: 10
+ * Parameter: None.
+ * Return: None.
+ *
+ * This function can select all the perfect number between 2 and 10000. A perfect number is a number that is sum of
+ * its positive divisors, excluding itself.
+ * It is used to find which number is perfect number in a given range.
+ *
+ * Range: 2 ~ 10000 ->  6 is a perfect number.
+						28 is a perfect number.
+						496 is a perfect number.
+						8128 is a perfect number.
+ *
+ */
+void drawDiamond(int);
+/* No.Problem: 11
+ * Parameter: int, a number which set the half length of the graph and half width of graph.
+ * Return: None.
+ *
+ * This function will print a specific graph like a diamond
+ * It is used to draw a special graph.
+ *
+ *INPUT: 5 ->**********
+ 	 	 	 ****  ****
+ 	 	 	 ***    ***
+ 	 	 	 **      **
+ 	 	 	 *        *
+ 	 	 	 *        *
+ 	 	 	 **      **
+ 	 	 	 ***    ***
+ 	 	 	 ****  ****
+ 	 	 	 **********
+ *INPUT: 4 ->********
+ 	 	 	 ***  ***
+ 	 	 	 **    **
+ 	 	 	 *      *
+ 	 	 	 *      *
+ 	 	 	 **    **
+ 	 	 	 ***  ***
+ 	 	 	 ********
+ *INPUT: 7 ->**************
+ 	 	 	 ******  ******
+ 	 	 	 *****    *****
+ 	 	 	 ****      ****
+ 	 	 	 ***        ***
+ 	 	 	 **          **
+ 	 	 	 *            *
+ 	 	 	 *            *
+ 	 	 	 **          **
+ 	 	 	 ***        ***
+ 	 	 	 ****      ****
+ 	 	 	 *****    *****
+ 	 	 	 ******  ******
+ 	 	 	 **************
+ */
+void uniqueArray(int numList[], int len);
+/* No.Problem: 12
+ * Parameter: numList[] & len, numList[] is a string consists many numbers. len is int represents the length of
+ * 				digits.
+ * Return: None.
+ *
+ * This function select all the unique value in an array list and print them out.
+ * It is used to remind the use whether they have duplicate elements in the array.
+ *
+ *INPUT: [3, 2, 3, 5, 1, 2, 3, 44, 2, 6, 1] -> 5 44 6
+ *INPUT: [23, 46, 17, 19, 22, 18, 46, 2] -> 23 46 17 19 22 18 2
+ *INPUT: [1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 2] -> nothing will be printed out.
+ */
+
 void shiftArr(int*, int, int);
+
 void matrixDiagonal(char[], int);
+/* No.Problem: 14
+ * Parameter: char[], int, char[] is the string consists of chars. int is the length of the char[].
+ * Return: None.
+ *
+ * This function will create a square matrix from the array by first determining the largest square matrix that will
+ * hold as many numbers as as possiable yet not have any blank space.
+ * This equation is used to read in turn form the diagonal of the letters.
+ *
+ *INPUT: [3, 2, 3, 5, 1, 2, 3, 44, 2, 6, 1] -> 5 44 6
+ *INPUT: [23, 46, 17, 19, 22, 18, 46, 2] -> 23 46 17 19 22 18 2
+ *INPUT: [1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 2] -> nothing will be printed out.
+ */
 void transposeMat(int, int, int**);
 
 int main() {
@@ -139,6 +284,8 @@ int main() {
 
 	cout << "Problem 11" << endl;
 	drawDiamond(5);
+	drawDiamond(4);
+	drawDiamond(7);
 	cout << "****************************************" << endl;
 
 	cout << "Problem 12" << endl;
