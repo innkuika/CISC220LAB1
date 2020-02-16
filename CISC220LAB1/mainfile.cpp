@@ -210,9 +210,11 @@ void matrixDiagonal(char[], int);
  * hold as many numbers as as possiable yet not have any blank space.
  * This equation is used to read in turn form the diagonal of the letters.
  *
- *INPUT: [3, 2, 3, 5, 1, 2, 3, 44, 2, 6, 1] -> 5 44 6
- *INPUT: [23, 46, 17, 19, 22, 18, 46, 2] -> 23 46 17 19 22 18 2
- *INPUT: [1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 2] -> nothing will be printed out.
+ *INPUT: { 'r', 'a', 'i', 'n', 'r', 'a', 'i', 'n', 'r', 'a', 'i',
+			'n', 'r', 'a', 'i', 'n' }, 16 -> rain
+ *INPUT: { 'c', 'a', 't', 'c', 'a', 't', 'c', 'a', 't', 'c', 'a',
+			't' }, 12 -> cat
+ *INPUT: { 'd', 'o', 'g', 'd', 'o', 'g', 'd', 'o', 'g' },9 -> dog
  */
 void transposeMat(int, int, int**);
 
