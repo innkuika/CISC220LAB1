@@ -332,6 +332,8 @@ int main() {
 	uniqueArray(test122, 8);
 	uniqueArray(test123, 14);
 
+	cout << "****************************************" << endl;
+
 	cout << "Problem 13" << endl;
 	int test131[6] = { 1, 2, 3, 4, 5, 6 };
 	int test132[9] = { 3, 7, 2, 6, 4, 3, 1, 9, 8 };
@@ -578,10 +580,7 @@ void matrixDiagonal(char charArr[], int arrLen) {
 
 void transposeMat(int **intArr,int x, int y) {
 
-	int row = x;
-	int col = y;
-
-	int tranMat[row - 1][col - 1];
+	int tranMat[x - 1][y - 1];
 	for (int i = 0, j = 0, h = 0, k = 0, c = 0; c < x * y; c++) {
 		tranMat[h][k] = intArr[j][i];
 		cout << tranMat[h][k];
@@ -589,17 +588,17 @@ void transposeMat(int **intArr,int x, int y) {
 		k++;
 		j++;
 
-		if (k == col) {
+		if (k == y) {
 			h++;
 			k = 0;
 			cout << "\n";
 		}
-		if (j == row) {
+		if (j == x) {
 			i++;
 			j = 0;
 		}
 	}
-	cout << "\n";
+
 
 }
 
