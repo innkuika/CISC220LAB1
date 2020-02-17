@@ -7,7 +7,7 @@
  *
  *
  * Created on: Feb 14, 2020
- * Author: Jessica Wu, Jingheng Zhang
+ * Author: Jessica Wu, Jinheng Zhang
  * Memo: This file contains functions for lab 1. The functions aren’t necessarily related
  * in any way other than that they are required for lab 1.
  */
