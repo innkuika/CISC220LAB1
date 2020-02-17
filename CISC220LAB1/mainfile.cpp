@@ -175,7 +175,7 @@ int main() {
 	cout << "Problem 15" << endl;
 	int test151[3][3] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 
-	//transposeMat(3, 3,&test151[0]);
+	transposeMat(3, 3,test151);
 
 	cout << "****************************************" << endl;
 
@@ -381,32 +381,32 @@ void matrixDiagonal(char charArr[], int arrLen) {
 
 }
 
-//void transposeMat( int x, int y,int intArr[][]) {
-//
-//
-//	int row = x;
-//	int col = y;
-//
-//	int tranMat[row-1][col-1];
-//	for(int i = y-1, j = 0, h = 0, k = 0; (i == y - 1) and (j == x - 1);) {
-//		tranMat[h][k] = intArr[i][j];
-//		cout << tranMat[h][k];
-//
-//		k++;
-//		i--;
-//
-//		if(k == col - 1) {
-//			h++;
-//			k = 0;
-//			cout << "\n";
-//		}
-//		if(i == 0) {
-//			j++;
-//			i = y - 1;
-//		}
-//	}
-//
-//}
+void transposeMat( int x, int y,int intArr[][]) {
+
+
+	int row = x;
+	int col = y;
+
+	int tranMat[row-1][col-1];
+	for(int i = y-1, j = 0, h = 0, k = 0; (i == y - 1) and (j == x - 1);) {
+		tranMat[h][k] = intArr[i][j];
+		cout << tranMat[h][k];
+
+		k++;
+		i--;
+
+		if(k == col - 1) {
+			h++;
+			k = 0;
+			cout << "\n";
+		}
+		if(i == 0) {
+			j++;
+			i = y - 1;
+		}
+	}
+
+}
 
 void shiftArr(int *intArr, int len, int offset) {
 	int newArr[len];
