@@ -2,11 +2,12 @@
  * mainfile.cpp
  *
  * Instructor: Debra Yarrington
- * TA: Laura
+ * TA: NA(not found on syllabus)
+ * Lab Section: 031
  *
  *
  * Created on: Feb 14, 2020
- * Author: jessicawu
+ * Author: Jessica Wu, Jingheng Zhang
  * Memo: This file contains functions for lab 1. The functions aren’t necessarily related
  * in any way other than that they are required for lab 1.
  */
