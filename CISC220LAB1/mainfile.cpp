@@ -358,24 +358,54 @@ int main() {
 	cout << "****************************************" << endl;
 
 	cout << "Problem 15" << endl;
-    int m = 3, n = 3, i, j;
-    int test151[3][3] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+	//first test
+	int m = 3, n = 3, i, j;
+	int num1[3][3] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 
-    int **num = new int*[m];
-    for (i = 0; i < m; i++)
-    {
-        num[i] = new int[n];
-    }
-    for (i = 0; i < m; i++){
-        for (j = 0; j < n; j++){
-            num[i][j] = test151[i][j];
-        }
-    }
+	int **test151 = new int*[m];
+	for (i = 0; i < m; i++) {
+		test151[i] = new int[n];
+	}
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			test151[i][j] = num1[i][j];
+		}
+	}
+	transposeMat(test151, 3, 3);
 
-    transposeMat(num,3, 3);
+	//second test
+	m = 4;
+	n = 3;
+	int num2[4][3] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+	int **test152 = new int*[m];
+	for (i = 0; i < m; i++) {
+		test152[i] = new int[n];
+	}
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			test152[i][j] = num2[i][j];
+		}
+	}
+	transposeMat(test152, 3, 4);
+
+	//third test
+	m = 2;
+	n = 5;
+	int num3[2][5] = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 } };
+	int **test153 = new int*[m];
+	for (i = 0; i < m; i++) {
+		test153[i] = new int[n];
+	}
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++) {
+			test153[i][j] = num3[i][j];
+		}
+	}
+	transposeMat(test153, 5, 2);
+
+
 
 	cout << "****************************************" << endl;
-
 	return 0;
 }
 
@@ -578,9 +608,9 @@ void matrixDiagonal(char charArr[], int arrLen) {
 
 }
 
-void transposeMat(int **intArr,int x, int y) {
+void transposeMat(int **intArr, int x, int y) {
 
-	int tranMat[x - 1][y - 1];
+	int tranMat[y - 1][x - 1];
 	for (int i = 0, j = 0, h = 0, k = 0, c = 0; c < x * y; c++) {
 		tranMat[h][k] = intArr[j][i];
 		cout << tranMat[h][k];
@@ -593,11 +623,14 @@ void transposeMat(int **intArr,int x, int y) {
 			k = 0;
 			cout << "\n";
 		}
-		if (j == x) {
+		if (j == y) {
 			i++;
 			j = 0;
 		}
 	}
+	cout << "\n";
+	cout.flush();
+
 
 
 }
