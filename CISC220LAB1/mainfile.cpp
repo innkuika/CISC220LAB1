@@ -356,9 +356,21 @@ int main() {
 	cout << "****************************************" << endl;
 
 	cout << "Problem 15" << endl;
-	int test151[3][3] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+    int m = 3, n = 3, i, j;
+    int test151[3][3] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 
-	transposeMat(3, 3, test151);
+    int **num = new int*[m];
+    for (i = 0; i < m; i++)
+    {
+        num[i] = new int[n];
+    }
+    for (i = 0; i < m; i++){
+        for (j = 0; j < n; j++){
+            num[i][j] = test151[i][j];
+        }
+    }
+
+    transposeMat(num,3, 3);
 
 	cout << "****************************************" << endl;
 
@@ -564,29 +576,30 @@ void matrixDiagonal(char charArr[], int arrLen) {
 
 }
 
-void transposeMat(int x, int y, int intArr[][]) {
+void transposeMat(int **intArr,int x, int y) {
 
 	int row = x;
 	int col = y;
 
 	int tranMat[row - 1][col - 1];
-	for (int i = y - 1, j = 0, h = 0, k = 0; (i == y - 1) and (j == x - 1);) {
-		tranMat[h][k] = intArr[i][j];
+	for (int i = 0, j = 0, h = 0, k = 0, c = 0; c < x * y; c++) {
+		tranMat[h][k] = intArr[j][i];
 		cout << tranMat[h][k];
 
 		k++;
-		i--;
+		j++;
 
-		if (k == col - 1) {
+		if (k == col) {
 			h++;
 			k = 0;
 			cout << "\n";
 		}
-		if (i == 0) {
-			j++;
-			i = y - 1;
+		if (j == row) {
+			i++;
+			j = 0;
 		}
 	}
+	cout << "\n";
 
 }
 
