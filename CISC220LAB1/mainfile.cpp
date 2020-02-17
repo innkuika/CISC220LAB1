@@ -140,9 +140,9 @@ void perfectNumber();
  * It is used to find which number is perfect number in a given range.
  *
  * Range: 2 ~ 10000 ->  6 is a perfect number.
-						28 is a perfect number.
-						496 is a perfect number.
-						8128 is a perfect number.
+ 28 is a perfect number.
+ 496 is a perfect number.
+ 8128 is a perfect number.
  *
  */
 void drawDiamond(int);
@@ -154,37 +154,37 @@ void drawDiamond(int);
  * It is used to draw a special graph.
  *
  *INPUT: 5 ->**********
- 	 	 	 ****  ****
- 	 	 	 ***    ***
- 	 	 	 **      **
- 	 	 	 *        *
- 	 	 	 *        *
- 	 	 	 **      **
- 	 	 	 ***    ***
- 	 	 	 ****  ****
- 	 	 	 **********
+ ****  ****
+ ***    ***
+ **      **
+ *        *
+ *        *
+ **      **
+ ***    ***
+ ****  ****
+ **********
  *INPUT: 4 ->********
- 	 	 	 ***  ***
- 	 	 	 **    **
- 	 	 	 *      *
- 	 	 	 *      *
- 	 	 	 **    **
- 	 	 	 ***  ***
- 	 	 	 ********
+ ***  ***
+ **    **
+ *      *
+ *      *
+ **    **
+ ***  ***
+ ********
  *INPUT: 7 ->**************
- 	 	 	 ******  ******
- 	 	 	 *****    *****
- 	 	 	 ****      ****
- 	 	 	 ***        ***
- 	 	 	 **          **
- 	 	 	 *            *
- 	 	 	 *            *
- 	 	 	 **          **
- 	 	 	 ***        ***
- 	 	 	 ****      ****
- 	 	 	 *****    *****
- 	 	 	 ******  ******
- 	 	 	 **************
+ ******  ******
+ *****    *****
+ ****      ****
+ ***        ***
+ **          **
+ *            *
+ *            *
+ **          **
+ ***        ***
+ ****      ****
+ *****    *****
+ ******  ******
+ **************
  */
 void uniqueArray(int numList[], int len);
 /* No.Problem: 12
@@ -201,6 +201,17 @@ void uniqueArray(int numList[], int len);
  */
 
 void shiftArr(int*, int, int);
+/* No.Problem: 13
+ * Parameter: an array of integers, a length parameter (for the length of the array), and a positive integer that is less than the length of the array.
+ * Return: None
+ *
+ * The function rotates the array to the left x number of times (with x being the 3rd input parameter).
+ * After rotating, print out the array within the function.
+ *
+ * Input: [1,2,3,4,5,6],6,2 -> [3,4,5,6,1,2]
+ * Input:[3,7,2,6,4,3,1,9,8],9,4 ->[4,3,1,9,8,3,7,2,6]
+ * Input: [7,2,4,5],4,1->[2,4,5,7]
+ */
 
 void matrixDiagonal(char[], int);
 /* No.Problem: 14
@@ -208,16 +219,38 @@ void matrixDiagonal(char[], int);
  * Return: None.
  *
  * This function will create a square matrix from the array by first determining the largest square matrix that will
- * hold as many numbers as as possiable yet not have any blank space.
+ * hold as many numbers as as possible yet not have any blank space.
  * This equation is used to read in turn form the diagonal of the letters.
  *
  *INPUT: { 'r', 'a', 'i', 'n', 'r', 'a', 'i', 'n', 'r', 'a', 'i',
-			'n', 'r', 'a', 'i', 'n' }, 16 -> rain
+ 'n', 'r', 'a', 'i', 'n' }, 16 -> rain
  *INPUT: { 'c', 'a', 't', 'c', 'a', 't', 'c', 'a', 't', 'c', 'a',
-			't' }, 12 -> cat
+ 't' }, 12 -> cat
  *INPUT: { 'd', 'o', 'g', 'd', 'o', 'g', 'd', 'o', 'g' },9 -> dog
  */
-void transposeMat(int, int, int**);
+void transposeMat(int**, int, int);
+/* No.Problem: 15
+ * Parameter: a matrix of integers, and 2 integers representing the matrix’s dimensions.
+ * Return: None
+ *
+ * This function prints out the transposed version of the matrix.
+ *
+ * INPUT: {{1,2,3}, 3,3 ->  1 4 7
+ * 		   {4,5,6},			2 5 8
+ * 		   {7,8,9}}  	 	3 6 9
+ *
+ * INPUT: {{1,2,3}, 3,4 ->  	1 4 7 10
+ * 		   {4,5,6},				2 5 8 11
+ * 		   {7,8,9}				3 6 9 12
+ * 		   {10,11,12}}
+ *
+ * INPUT: {{1,2,3,4,5}, 5,2 ->  1 6
+ * 		   {6,7,8,9,10}}		2 7
+ * 		   						3 8
+ * 		   						4 9
+ * 		   						5 10
+ *
+ */
 
 int main() {
 	cout << "Problem 1" << endl;
@@ -325,7 +358,7 @@ int main() {
 	cout << "Problem 15" << endl;
 	int test151[3][3] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 
-	transposeMat(3, 3,test151);
+	transposeMat(3, 3, test151);
 
 	cout << "****************************************" << endl;
 
@@ -531,26 +564,25 @@ void matrixDiagonal(char charArr[], int arrLen) {
 
 }
 
-void transposeMat( int x, int y,int intArr[][]) {
-
+void transposeMat(int x, int y, int intArr[][]) {
 
 	int row = x;
 	int col = y;
 
-	int tranMat[row-1][col-1];
-	for(int i = y-1, j = 0, h = 0, k = 0; (i == y - 1) and (j == x - 1);) {
+	int tranMat[row - 1][col - 1];
+	for (int i = y - 1, j = 0, h = 0, k = 0; (i == y - 1) and (j == x - 1);) {
 		tranMat[h][k] = intArr[i][j];
 		cout << tranMat[h][k];
 
 		k++;
 		i--;
 
-		if(k == col - 1) {
+		if (k == col - 1) {
 			h++;
 			k = 0;
 			cout << "\n";
 		}
-		if(i == 0) {
+		if (i == 0) {
 			j++;
 			i = y - 1;
 		}
